@@ -6,14 +6,18 @@ void setup()
 void draw()
 {
 	background(0);
-for( int myX = 0; myX < 400; myX = myX + 70)
-	{
-	Die juan = new Die(myX, 200);
-	//roll before show t make it that it calls only one value
-	juan.roll();
-	juan.show();
+	int digit = 0;
+for(int myY =10; myY <=350; myY +=70)
+{
+	for( int myX = 0; myX < 400; myX = myX + 70)
+		{
+		Die juan = new Die(myX, myY);
+		juan.roll();
+		juan.show();
 
-	
+
+
+		}
 	}
 }
 void mousePressed()
@@ -31,8 +35,9 @@ class Die //models one single dice cube
 		myX = x;
 		myY = y;
 
+		if( dig)
 
-		//variable initializations here
+		
 	}
 	void roll()
 	{
@@ -63,7 +68,7 @@ class Die //models one single dice cube
 			number = 6;
 		}
 		
-		//your code here
+		
 	}
 	void show()
 	{
@@ -117,6 +122,6 @@ class Die //models one single dice cube
 			ellipse(myX+45, myY+25, 7, 7);
 			ellipse(myX+45, myY+45, 7, 7);
 		}
-		//your code here
+		
 	}
 }
