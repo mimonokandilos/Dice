@@ -8,17 +8,25 @@ void draw()
 	background(0);
 	int digit = 0;
 for(int myY =10; myY <=350; myY +=70)
-{
+	{
 	for( int myX = 0; myX < 400; myX = myX + 70)
 		{
 		Die juan = new Die(myX, myY);
 		juan.roll();
 		juan.show();
 
+		if(juan.number <= 6)
+			{
+				digit = digit + juan.number;
+			}
 
 
 		}
+		//System.out.println(digit);
+		fill(255);
+		
 	}
+	text("NUMBER:" + digit,200,350);
 }
 void mousePressed()
 {
@@ -35,10 +43,8 @@ class Die //models one single dice cube
 		myX = x;
 		myY = y;
 
-		if( dig)
-
-		
 	}
+
 	void roll()
 	{
 		number = 6;
